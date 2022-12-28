@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -22,5 +26,49 @@ a {
   body {
     color: white;
     background: black;
+  }
+}
+
+.wheel {
+  animation-name: spin;
+  animation-duration: 700ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 2;
+}
+
+.wheel1 {
+  position: relative;
+  top: 290px;
+  left: 124px;
+}
+
+.wheel2 {
+  position: relative;
+  top: 190px;
+  left: 555px;
+}
+
+.mobilemiter {
+  background: url('/car-limiter.png') left top no-repeat;
+  position: absolute;
+  bottom: 0px;
+
+  z-index: 3;
+}
+
+.road {
+  background: url('/bg.jpg') bottom left repeat-x;
+  overflow: hidden;
+  background-image: url('/bg.jpg');
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
   }
 }
